@@ -25,10 +25,12 @@
   "dependencies": {
     "fastify": "0.30.2",
     "hyperscript": "2.0.2",
+    "less": "^2.7.3",
     "pino": "4.8.1",
     "ramda": "0.24.1"
   },
   "devDependencies": {
+    "eslint": "^4.10.0",
     "nodemon": "1.12.1"
   }
 }

@@ -1,17 +1,15 @@
 const h = require('hyperscript');
 
-const appName = 'testing';
-
 const IndexPage = (props) => h('html', {}, [
   h('head', {}, [
     h('title', {}, props.title),
     h('meta', { charset: 'UTF-8'}),
-    h('meta', { 
+    h('meta', {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1'
     }),
     h('link', {
-      href: '/css/style.css',
+      href: '/css/styles.css',
       rel: 'stylesheet'
     }),
   ]),

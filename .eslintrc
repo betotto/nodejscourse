@@ -1,0 +1,47 @@
+{
+	"extends": [
+		"eslint:recommended"
+	],
+	"plugins": [],
+	"globals": {
+	},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"rules": {
+		"indent": ["error", 2, { "SwitchCase": 1 }],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"eqeqeq": ["error", "always"],
+		"no-console": "error",
+		"eol-last": "error",
+		"no-debugger": "error",
+		"block-scoped-var": "error",
+		"no-div-regex": "error",
+		"no-eval": "error",
+		"array-bracket-spacing": "error",
+		"brace-style": "error",
+		"comma-spacing": ["error", {"before": false, "after": true}],
+		"block-spacing": "error",
+		"space-before-blocks": ["error", {"functions": "always", "keywords": "always"}],
+		"max-len": ["error", {"code": 120, "ignoreUrls": true}],
+		"key-spacing": ["error", {"beforeColon": false, "afterColon": true}],
+		"no-var": "error",
+		"no-unused-vars": "error",
+		"no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }],
+		"no-trailing-spaces": "error",
+		"no-alert": "error",
+		"no-lone-blocks": "error",
+		"jsx-quotes": "error",
+		"no-multiple-empty-lines": ["error", {"max": 1, "maxEOF": 0}]
+	}
+}
