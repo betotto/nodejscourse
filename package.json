@@ -6,7 +6,8 @@
   "engine": ">=8.0.0",
   "scripts": {
     "test": "test",
-    "dev-server": "nodemon index.js"
+    "dev-server": "nodemon index.js",
+    "eslint": "eslint ."
   },
   "repository": {
     "type": "git",

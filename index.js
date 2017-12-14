@@ -4,7 +4,7 @@ const fastify = require('fastify')({ logger: pino });
 const { lessOnFly, fullHtml } = require('./utils');
 const indexHtml = require('./index.html');
 
-fastify.get('/index.html', function (request, reply) {
+fastify.get('/index.html', function (request, reply, vaca) {
   fullHtml(reply, indexHtml, config.indexHtml);
 });
 
