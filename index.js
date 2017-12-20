@@ -1,10 +1,16 @@
-const pino = require('pino')({ name: 'myapp', level: 'debug', prettyPrint: true });
-const config = require('./conf');
+const pino = require('pino')({ name: 'myapp', level: 'info', prettyPrint: true });
 const fastify = require('fastify')({ logger: pino });
+
+const config = require('./conf');
 const { lessOnFly, fullHtml } = require('./utils');
 const indexHtml = require('./index.html');
+const sessionRoutes = require('./modules/session/routes');
+const mysql = require('./modules/database/plugin');
 
-fastify.get('/index.html', function (request, reply, vaca) {
+fastify.register(mysql);
+fastify.register(sessionRoutes, { prefix: '/session' });
+
+fastify.get('/index.html', (request, reply) => {
   fullHtml(reply, indexHtml, config.indexHtml);
 });
 
