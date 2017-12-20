@@ -25,13 +25,16 @@
   "homepage": "https://github.com/betotto/nodejscourse#readme",
   "dependencies": {
     "fastify": "0.30.2",
+    "fastify-plugin": "0.1.1",
     "hyperscript": "2.0.2",
-    "less": "^2.7.3",
+    "less": "2.7.3",
+    "mysql": "2.15.0",
     "pino": "4.8.1",
-    "ramda": "0.24.1"
+    "ramda": "0.25.0",
+    "uuid": "3.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
+    "eslint": "4.13.1",
     "nodemon": "1.12.1"
   }
 }

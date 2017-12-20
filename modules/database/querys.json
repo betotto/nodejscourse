@@ -1,0 +1,6 @@
+{
+  "session": {
+    "init": "insert into SESSION (STATUS) values (?)",
+    "close": "UPDATE SESSION set CLOSINGDATE = CURDATE(), STATUS = ? WHERE IDSESSION = ?"
+  }
+}
