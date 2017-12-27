@@ -2,26 +2,17 @@ const pino = require('pino')({ name: 'myapp', level: 'info', prettyPrint: true }
 const fastify = require('fastify')({ logger: pino });
 
 const config = require('./conf');
-const { lessOnFly, fullHtml } = require('./utils');
-const indexHtml = require('./index.html');
-const sessionRoutes = require('./modules/session/routes');
-const mysql = require('./modules/database/plugin');
 
-fastify.register(mysql);
-fastify.register(sessionRoutes, { prefix: '/session' });
+const App = require('./modules');
 
-fastify.get('/index.html', (request, reply) => {
-  fullHtml(reply, indexHtml, config.indexHtml);
-});
+App(fastify);
 
-fastify.get('/css/styles.css', (req, reply) => {
-  lessOnFly(reply);
-});
+global.pino = pino;
 
 fastify.listen(config.port, (err) => {
   if (err) {
     pino.fatal(err);
     throw err;
   }
-  pino.info(`server listening on ${fastify.server.address().port}`);
+  global.pino.info(`server listening on ${fastify.server.address().port}`);
 });

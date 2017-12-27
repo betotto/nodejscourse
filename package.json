@@ -30,11 +30,19 @@
     "less": "2.7.3",
     "mysql": "2.15.0",
     "pino": "4.8.1",
-    "ramda": "0.25.0",
     "uuid": "3.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
     "eslint": "4.13.1",
-    "nodemon": "1.12.1"
+    "memory-fs": "0.4.1",
+    "nodemon": "1.12.1",
+    "preact": "^8.2.7",
+    "ramda": "^0.25.0",
+    "redux": "^3.7.2",
+    "webpack": "3.10.0",
+    "webpack-dev-server": "2.9.7"
   }
 }
