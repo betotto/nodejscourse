@@ -5,7 +5,7 @@ const sessionStatus = {
   CLOSED: 2
 };
 
-const initSession = (pool, log) => {
+const initSession = (pool) => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if(err) {
@@ -16,18 +16,18 @@ const initSession = (pool, log) => {
       };
       const query = connection.query(querys.session.init, [session.status], (error, results) => {
         connection.release();
-        session.id = results.insertId;
         if (error) {
           reject(error);
         }
+        session.id = results.insertId;
         resolve(session);
       });
-      log.info(query.sql);
+      global.pino.info(query.sql);
     });
   });
 };
 
-const closeSession = (pool, log, idSession) => {
+const closeSession = (pool, idSession) => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
       if(err) {
@@ -40,7 +40,7 @@ const closeSession = (pool, log, idSession) => {
         }
         resolve(results);
       });
-      log.info(query.sql);
+      global.pino.info(query.sql);
     });
   });
 };

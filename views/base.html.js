@@ -1,6 +1,7 @@
 const h = require('hyperscript');
+const Menu = require('./menu.html');
 
-const IndexPage = (props) => h('html', {}, [
+const BasePage = (props, children) => h('html', {}, [
   h('head', {}, [
     h('title', {}, props.title),
     h('meta', { charset: 'UTF-8'}),
@@ -14,9 +15,13 @@ const IndexPage = (props) => h('html', {}, [
     }),
   ]),
   h('body', {}, [
-    h('div', {}, 'Hello World from nodejs'),
-    h('script', { src: '/js/app.js' })
+    h('div', {
+      class: 'pure-g'
+    }, [
+      h('div', { class: 'pure-u-1-4' }, Menu),
+      h('div', { class: 'pure-u-3-4' }, children)
+    ])
   ])
 ]);
 
-module.exports = IndexPage;
+module.exports = BasePage;
