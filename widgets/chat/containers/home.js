@@ -1,6 +1,5 @@
-
-const Preact = require('preact');
-const { h, render, Component } = Preact;
+import { h, Component } from 'preact';
+import { connect } from 'preact-redux';
 
 class Form extends Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class Form extends Component {
     });
   }
 
-  render(_, state) {
+  render(props, state) {
     return h('div', {
     }, [
       h('input', {
@@ -25,9 +24,16 @@ class Form extends Component {
         value: state.text,
         onKeyUp: this.changeText
       }),
-      h('div', {}, state.text)
+      h('div', {}, state.text),
+      h('div', {}, props.loading)
     ]);
   }
 }
 
-render(h(Form), document.getElementById('main'));
+const mapStateToProps = (state) => {
+  return {
+    loading: state.ajaxModule
+  };
+};
+
+export default connect(mapStateToProps)(Form);

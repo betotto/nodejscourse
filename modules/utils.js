@@ -52,7 +52,7 @@ const webpackCompiler = (reply, entry) => {
 
   const compiler =  webpack({
     context: __dirname.replace('/modules', ''),
-    entry: `./widgets/${entry}`,
+    entry: `./widgets/chat/${entry}`,
     output: {
       path: '/out',
       filename: entry
@@ -79,6 +79,7 @@ const webpackCompiler = (reply, entry) => {
     if(stats.compilation.errors > 0) {
       pino.error(stats.compilation.errors[1]);
     }
+    //pino.info(stats);
     const stream = new Duplex();
     const gzip = zlib.createGzip();
     reply.header('Content-Encoding', 'gzip');

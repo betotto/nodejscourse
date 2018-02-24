@@ -5,7 +5,8 @@
 	"plugins": [],
 	"globals": {
 		"document": true,
-		"pino": true
+		"pino": true,
+		"window": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 2017,

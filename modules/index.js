@@ -31,8 +31,8 @@ const configApp = (fastify) => {
     lessOnFly(reply);
   });
 
-  fastify.get('/js/app.js', (req, reply) => {
-    webpackCompiler(reply, 'app.js', 'app.js');
+  fastify.get('/js/chat.js', (req, reply) => {
+    webpackCompiler(reply, 'chat.js', 'chat.js');
   });
 };
 
